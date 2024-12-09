@@ -336,7 +336,7 @@ int ncclFindInterfaces(char* ifNames, union ncclSocketAddress *ifAddrs, int ifNa
   } else {
     // Try to automatically pick the right one
     // Start with IB
-    nIfs = findInterfaces("ib", ifNames, ifAddrs, sock_family, ifNameMaxSize, maxIfs);
+    nIfs = findInterfaces("eth", ifNames, ifAddrs, sock_family, ifNameMaxSize, maxIfs);
     // else see if we can get some hint from COMM ID
     if (nIfs == 0) {
       const char* commId = ncclGetEnv("NCCL_COMM_ID");
